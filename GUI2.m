@@ -22,7 +22,7 @@ function varargout = GUI(varargin)
 
 % Edit the above text to modify the response to help GUI
 
-% Last Modified by GUIDE v2.5 13-Dec-2017 12:04:47
+% Last Modified by GUIDE v2.5 15-Dec-2017 10:42:11
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -74,19 +74,9 @@ function varargout = GUI_OutputFcn(hObject, eventdata, handles)
 varargout{1} = handles.output;
 
 
-% --- Executes during object creation, after setting all properties.
-function axes1_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to axes1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-axes(hObject)
-imshow('Countdown.jpg')
-% Hint: place code in OpeningFcn to populate axes1
-
-
-% --- Executes on button press in pushbutton2.
+% --- Executes on button press in Consonant.
 function Consonant_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton2 (see GCBO)
+% hObject    handle to Consonant (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
@@ -98,13 +88,6 @@ function Vowel_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 
-% --- Executes on button press in pushbutton8.
-function pushbutton8_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton8 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-
 % --- Executes on button press in Submit.
 function Submit_Callback(hObject, eventdata, handles)
 % hObject    handle to Submit (see GCBO)
@@ -112,14 +95,14 @@ function Submit_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 
-
-function edit1_Callback(hObject, eventdata, handles)
-% hObject    handle to edit1 (see GCBO)
+% --- Executes during object creation, after setting all properties.
+function axes4_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to axes4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of edit1 as text
-%        str2double(get(hObject,'String')) returns contents of edit1 as a double
+% handles    empty - handles not created until after all CreateFcns called
+axes(hObject)
+imshow('Countdown.jpg')
+% Hint: place code in OpeningFcn to populate axes4
 
 
 % --- Executes during object creation, after setting all properties.
@@ -133,13 +116,3 @@ function edit1_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
-
-% --- Executes during object creation, after setting all properties.
-function axes3_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to axes1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-axes(hObject)
-imshow('Countdown.jpg')
-% Hint: place code in OpeningFcn to populate axes1
