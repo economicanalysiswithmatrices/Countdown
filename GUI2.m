@@ -22,7 +22,7 @@ function varargout = GUI(varargin)
 
 % Edit the above text to modify the response to help GUI
 
-% Last Modified by GUIDE v2.5 15-Dec-2017 10:42:11
+% Last Modified by GUIDE v2.5 15-Dec-2017 12:07:19
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -106,8 +106,8 @@ imshow('Countdown.jpg')
 
 
 % --- Executes during object creation, after setting all properties.
-function edit1_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit1 (see GCBO)
+function Answerbox_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Answerbox (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
