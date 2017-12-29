@@ -82,25 +82,30 @@ function Consonant_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 global Consonant;
+% Obtains global variable 'Consonant'
 
 global NumberOfLetters;
+% Obtains global variable 'NumberOfLetters'
 
 global NumberOfConsonants;
-
+ % Obtains global variable 'NumberOfConsonants'
+ 
 global Started;
+% Obtains global variable 'Started'
 
-if (~Started)
-    if (NumberOfConsonants ~= 6)
-     if (NumberOfLetters ~= 9)
-            NumberOfLetters = NumberOfLetters + 1;
-            NumberOfConsonants = NumberOfConsonants + 1;
-            RandomNumber = randi(numel(Consonant));
-            RandomConsonant = Consonant(1,RandomNumber);
-            LetterDef = strcat('Letter',int2str(NumberOfLetters));
-            CurrentLetter = findobj('Style', 'text','-and','Tag',LetterDef);
-            set(CurrentLetter,'String',RandomConsonant)
-            if(NumberOfLetters == 9)
-              Start
+
+if (~Started) % if started is false
+    if (NumberOfConsonants ~= 6) % if number of consonants is not equal to six
+     if (NumberOfLetters ~= 9) % if number of letters is not equal to nine 
+            NumberOfLetters = NumberOfLetters + 1; % add 1 to number of letters
+            NumberOfConsonants = NumberOfConsonants + 1; % add 1 to number of consonants 
+            RandomNumber = randi(numel(Consonant)); % generates random number from zero to number of different consonants 
+            RandomConsonant = Consonant(1,RandomNumber); % obtains a consonant using the random number 
+            LetterDefine = strcat('Letter',int2str(NumberOfLetters)); % obtains curent letter box
+            CurrentLetter = findobj('Style', 'text','-and','Tag',LetterDefine); % as above 
+            set(CurrentLetter,'String',RandomConsonant) % sets box as obtained consonant
+            if(NumberOfLetters == 9) % if number of letters equals 9 countdown starts 
+              Start % for start fuction (to be implemented)
             end
       else
           Start
