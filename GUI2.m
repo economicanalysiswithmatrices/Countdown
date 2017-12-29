@@ -22,14 +22,14 @@ function varargout = GUI2(varargin)
 
 % Edit the above text to modify the response to help GUI
 
-% Last Modified by GUIDE v2.5 15-Dec-2017 12:07:19
+% Last Modified by GUIDE v2.5 29-Dec-2017 18:12:28
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @GUI_OpeningFcn, ...
-                   'gui_OutputFcn',  @GUI_OutputFcn, ...
+                   'gui_OpeningFcn', @GUI2_OpeningFcn, ...
+                   'gui_OutputFcn',  @GUI2_OutputFcn, ...
                    'gui_LayoutFcn',  [], ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -45,7 +45,7 @@ end
 
 
 % --- Executes just before GUI is made visible.
-function GUI_OpeningFcn(hObject, eventdata, handles, varargin)
+function GUI2_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -61,14 +61,15 @@ guidata(hObject, handles);
 
 % UIWAIT makes GUI wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
+Reset
 
 
 % --- Outputs from this function are returned to the command line.
-function varargout = GUI_OutputFcn(hObject, eventdata, handles)
+function varargout = GUI2_OutputFcn(hObject, eventdata, handles)
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
+% handles    structure with handles and user data (see GfUIDATA)
 
 % Get default command line output from handles structure
 varargout{1} = handles.output;
@@ -86,16 +87,16 @@ global NumberOfLetters;
 
 global NumberOfConsonants;
 
-global started;
+global Started;
 
-if (~started)
+if (~Started)
     if (NumberOfConsonants ~= 6)
      if (NumberOfLetters ~= 9)
             NumberOfLetters = NumberOfLetters + 1;
             NumberOfConsonants = NumberOfConsonants + 1;
             RandomNumber = randi(numel(Consonant));
             RandomConsonant = Consonant(1,RandomNumber);
-            LetterDef = strcat('Letter',int2str(NoOfLetters));
+            LetterDef = strcat('Letter',int2str(NumberOfLetters));
             CurrentLetter = findobj('Style', 'text','-and','Tag',LetterDef);
             set(CurrentLetter,'String',RandomConsonant)
             if(NumberOfLetters == 9)
@@ -121,14 +122,7 @@ function Submit_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 
-% --- Executes during object creation, after setting all properties.
-function axes4_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to axes4 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-axes(hObject)
-imshow('Countdown.jpg')
-% Hint: place code in OpeningFcn to populate axes4
+
 
 
 % --- Executes during object creation, after setting all properties.
@@ -142,3 +136,61 @@ function Answerbox_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+function Reset
+
+global NumberOfLetters;
+
+NumberOfLetters = 0;
+
+global NumberOfVowels;
+
+NumberOfVowels = 0;
+
+global NumberOfConsonants;
+
+NumberOfConsonants = 0;
+
+global Started;
+
+Started = false;
+
+global Vowels
+
+Vowels = ["A","E","I","O","U"];
+
+global Consonant
+
+Consonant =  ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "X", "Z", "W", "Y"];
+
+
+for i=1:9
+   LetterNumber = strcat('Letter',int2str(i));
+   LetterObject = findobj('Style','text','-and','Tag',LetterNumber);
+   set(LetterObject,'String', '');
+end
+
+Timer = findobj('Style','text','-and','Tag','Timer');
+
+set(Timer,'String','30')
+
+AnswerInput = findobj('Style','edit','-and','Tag','AnswerInput');
+
+set(AnswerInput,'String','')
+
+Answer = findobj('Style','text','-and','Tag','Answer');
+
+set(Answer,'String','')
+
+
+% --- Executes during object creation, after setting all properties.
+function Background_CreateFcn(hObject, eventdata, handles)
+
+axes(hObject)
+imshow('Countdown.jpg') %This causes errors with the image
+% hObject    handle to Background (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: place code in OpeningFcn to populate Background
