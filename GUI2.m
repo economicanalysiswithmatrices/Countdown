@@ -22,7 +22,7 @@ function varargout = GUI2(varargin)
 
 % Edit the above text to modify the response to help GUI
 
-% Last Modified by GUIDE v2.5 04-Jan-2018 13:39:21
+% Last Modified by GUIDE v2.5 04-Jan-2018 15:11:33
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -156,7 +156,7 @@ end
 
 % --- Executes during object creation, after setting all properties.
 function Answerbox_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to Answerbox (see GCBO)
+% hObject    handle to answersubmit (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -214,8 +214,8 @@ set(Answer,'String','')
 
 
 % --- Executes during object creation, after setting all properties.
-function AnswerBox_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to AnswerBox (see GCBO)
+function AnswerSubmit_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to AnswerSubmit (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -224,3 +224,13 @@ function AnswerBox_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+
+function AnswerSubmit_Callback(hObject, eventdata, handles)
+% hObject    handle to AnswerSubmit (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of AnswerSubmit as text
+%        str2double(get(hObject,'String')) returns contents of AnswerSubmit as a double
