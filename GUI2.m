@@ -22,7 +22,7 @@ function varargout = GUI2(varargin)
 
 % Edit the above text to modify the response to help GUI
 
-% Last Modified by GUIDE v2.5 04-Jan-2018 15:41:55
+% Last Modified by GUIDE v2.5 04-Jan-2018 16:02:06
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -155,8 +155,8 @@ end
 
 
 % --- Executes during object creation, after setting all properties.
-function WordInput_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to wordsubmit (see GCBO)
+function AnswerInput_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to submitanswer (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -214,8 +214,8 @@ set(Answer,'String','')
 
 
 % --- Executes during object creation, after setting all properties.
-function WordSubmit_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to WordSubmit (see GCBO)
+function SubmitAnswer_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to SubmitAnswer (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -227,10 +227,10 @@ end
 
 
 
-function WordSubmit_Callback(hObject, eventdata, handles)
-% hObject    handle to WordSubmit (see GCBO)
+function SubmitAnswer_Callback(hObject, eventdata, handles)
+% hObject    handle to SubmitAnswer (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of WordSubmit as text
-%        str2double(get(hObject,'String')) returns contents of WordSubmit as a double
+% Hints: get(hObject,'String') returns contents of SubmitAnswer as text
+%        str2double(get(hObject,'String')) returns contents of SubmitAnswer as a double
