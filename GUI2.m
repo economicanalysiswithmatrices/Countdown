@@ -93,11 +93,8 @@ function Consonant_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 global Consonant;  % obtains global variable 'Consonant'
-
 global NumberOfLetters; % obtains global variable 'NumberOfLetters'
-
 global NumberOfConsonants; % obtains global variable 'NumberOfConsonants'
-
 global Started; % obtains global variable 'Started'
 
 if (~Started) % if started is false
@@ -123,11 +120,8 @@ end
 function Vowel_Callback(hObject, eventdata, handles)
 
 global Vowels; % obtains Global Variable 'Vowels'
-
 global NumberOfLetters; % obtains Global Variable 'NumberOfLetters'
-
 global NumberOfVowels; % obtains Global Variable 'NumberOfVowels'
-
 global Started; % obtains Global Variable 'Started'
 
 if(~Started) % if started is false
@@ -170,27 +164,21 @@ end
 function Reset
 
 global NumberOfLetters;
-
 NumberOfLetters = 0;
 
 global NumberOfVowels;
-
 NumberOfVowels = 0;
 
 global NumberOfConsonants;
-
 NumberOfConsonants = 0;
 
 global Started;
-
 Started = false;
 
 global Vowels
-
 Vowels = ["A","E","I","O","U"];
 
 global Consonant
-
 Consonant =  ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "X", "Z", "W", "Y"];
 
 
@@ -234,3 +222,16 @@ function SubmitAnswer_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'String') returns contents of SubmitAnswer as text
 %        str2double(get(hObject,'String')) returns contents of SubmitAnswer as a double
+
+function Start
+
+global Started;
+
+Started = true;
+
+TimerObject = findobj('Style','text','-and','Tag','Timer');
+
+for i=1:30
+    set(TimerObject, 'String', 30-i)
+    pause(1)
+end
