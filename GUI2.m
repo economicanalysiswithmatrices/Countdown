@@ -22,7 +22,7 @@ function varargout = GUI2(varargin)
 
 % Edit the above text to modify the response to help GUI
 
-% Last Modified by GUIDE v2.5 04-Jan-2018 16:02:06
+% Last Modified by GUIDE v2.5 06-Jan-2018 15:30:36
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -62,15 +62,14 @@ guidata(hObject, handles);
 % UIWAIT makes GUI wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
-ha = axes('units','normalized', 'position',[0 0 1 1]); % creates the 'background' axes
-
-uistack(ha,'bottom'); % moves the background axes to the bottom
+axes('units','normalized', 'position',[0 0 1 1]); % creates the 'background' axes
 
 % Load in a background image and display it using the correct colors
 
 I=imread('Countdown.jpg');
 hi = imagesc(I)
-colormap gray
+
+DisplayHighestScore
 
 Reset % executes reset funtion
 
@@ -161,77 +160,22 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-function Reset
-
-global NumberOfLetters;
-NumberOfLetters = 0;
-
-global NumberOfVowels;
-NumberOfVowels = 0;
-
-global NumberOfConsonants;
-NumberOfConsonants = 0;
-
-global Started;
-Started = false;
-
-global Vowels
-Vowels = ["A","E","I","O","U"];
-
-global Consonant
-Consonant =  ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "X", "Z", "W", "Y"];
-
-
-for i=1:9
-   LetterNumber = strcat('Letter',int2str(i));
-   LetterObject = findobj('Style','text','-and','Tag',LetterNumber);
-   set(LetterObject,'String', '');
-end
-
-Timer = findobj('Style','text','-and','Tag','Timer');
-
-set(Timer,'String','30')
-
-AnswerInput = findobj('Style','edit','-and','Tag','AnswerInput');
-
-set(AnswerInput,'String','')
-
-Answer = findobj('Style','text','-and','Tag','Answer');
-
-set(Answer,'String','')
-
-
 % --- Executes during object creation, after setting all properties.
 function SubmitAnswer_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to SubmitAnswer (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
 
 
 function SubmitAnswer_Callback(hObject, eventdata, handles)
 % hObject    handle to SubmitAnswer (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of SubmitAnswer as text
-%        str2double(get(hObject,'String')) returns contents of SubmitAnswer as a double
-
-function Start
-
-global Started;
-
-Started = true;
-
-TimerObject = findobj('Style','text','-and','Tag','Timer');
-
-for i=1:30
-    set(TimerObject, 'String', 30-i)
-    pause(1)
-end
+AnswerInput = findobj('Style','edit','-and','Tag','AnswerInput');
+AnswerWord = get(AnswerInput, 'String');
+AnswerDisplay = findobj('Style','Text','-and','Tag','Answer');
+set(AnswerDisplay, 'String', AnswerWord);
