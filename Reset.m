@@ -13,10 +13,14 @@ global Started;
 Started = false;
 
 global Vowels
-Vowels = ["A","E","I","O","U"];
+Vowels = ["A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","E","E","E","E","E","E","E","E","E","E",...
+    "E","E","E","E","E","E","E","E","E","E","E","I","I","I","I","I","I","I","I","I","I","I","I","I","O","O",...
+    "O","O","O","O","O","O","O","O","O","O","O","U","U","U","U","U"];
 
 global Consonant
-Consonant =  ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "X", "Z", "W", "Y"];
+Consonant =  ["B","B","C","C","C","D","D","D","D","D","D","F","F","G","G","G","H","H","J","K","L","L","L","L","L",...
+    "M","M","M","M","N","N","N","N","N","N","N","N","P","P","P","P","P","Q","R","R","R","R","R","R","R","R","R",...
+    "S","S","S","S","S","S","S","S","S","T","T","T","T","T","T","T","T","T","V","X","Z","W","Y"];
 
 
 for i=1:9
