@@ -19,9 +19,7 @@ function varargout = RunMe(varargin)
 %      instance to run (singleton)".
 %
 % See also: GUIDE, GUIDATA, GUIHANDLES
-
 % Edit the above text to modify the response to help GUI
-
 % Last Modified by GUIDE v2.5 06-Jan-2018 15:30:36
 
 % Begin initialization code - DO NOT EDIT
@@ -66,10 +64,10 @@ axes('units','normalized', 'position',[0 0 1 1]); % creates the 'background' axe
 
 % Load in a background image and display it using the correct colors
 
-I=imread('Countdown.jpg');
-hi = imagesc(I)
+I=imread('Countdown.jpg'); % obtains 'Countdown.jpg' image from folder
+hi = imagesc(I) % displays 'Countdown.jpg' image
 
-DisplayHighestScore
+DisplayHighestScore % executes funtion 'DisplayHighestScore'
 
 Reset % executes reset funtion
 
@@ -103,9 +101,9 @@ if (~Started) % if started is false
             NumberOfConsonants = NumberOfConsonants + 1; % add 1 to number of consonants 
             RandomNumber = randi(numel(Consonant)); % generates random number from zero to number of different consonants 
             RandomConsonant = Consonant(1,RandomNumber); % uses random number to obtain a consonant
-            LetterDefine = strcat('Letter',int2str(NumberOfLetters)); % obtains curent letter box
-            CurrentLetter = findobj('Style', 'text','-and','Tag',LetterDefine); % as above 
-            set(CurrentLetter,'String',RandomConsonant) % sets box to show obtained consonant
+            LetterDefine = strcat('Letter',int2str(NumberOfLetters)); % obtains curent letter box (1/2)
+            CurrentLetter = findobj('Style', 'text','-and','Tag',LetterDefine); % obtains current letter box (2/2)
+            set(CurrentLetter,'String',RandomConsonant) % sets box to display obtained consonant
             if(NumberOfLetters == 9) % if number of letters equals 9 countdown starts 
               Start % runs start fuction 
             end
@@ -117,7 +115,9 @@ end
 
 % --- Executes on button press in Vowel.
 function Vowel_Callback(hObject, eventdata, handles)
-
+% hObject    handle to Vowel (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
 global Vowels; % obtains Global Variable 'Vowels'
 global NumberOfLetters; % obtains Global Variable 'NumberOfLetters'
 global NumberOfVowels; % obtains Global Variable 'NumberOfVowels'
@@ -130,9 +130,9 @@ if(~Started) % if started is false
           NumberOfVowels = NumberOfVowels + 1; % add 1 to the number of vowels
           RandomNumber = randi(numel(Vowels)); % generates a random number from zero to number of vowels 
           RandomVowel = Vowels(1,RandomNumber); % uses random number to obtain a consonant
-          LetterDefine = strcat('Letter',int2str(NumberOfLetters)); % obtains curent letter box
-          CurrentLetter = findobj('Style', 'text','-and','Tag',LetterDefine); % as above 
-          set(CurrentLetter,'String',RandomVowel) % sets box to show obtained vowel
+          LetterDefine = strcat('Letter',int2str(NumberOfLetters)); % obtains curent letter box (1/2)
+          CurrentLetter = findobj('Style', 'text','-and','Tag',LetterDefine); % obtains current letter box (2/2)
+          set(CurrentLetter,'String',RandomVowel) % sets box to display obtained vowel
           if(NumberOfLetters == 9) % if number of letters equals 9 countdown starts 
               Start % runs start fuction 
           end
@@ -141,10 +141,6 @@ if(~Started) % if started is false
       end
    end
 end
-
-% hObject    handle to Vowel (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
 
 % --- Executes during object creation, after setting all properties.
@@ -175,7 +171,7 @@ function SubmitAnswer_Callback(hObject, eventdata, handles)
 % hObject    handle to SubmitAnswer (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-AnswerInput = findobj('Style','edit','-and','Tag','AnswerInput');
-AnswerWord = get(AnswerInput, 'String');
-AnswerDisplay = findobj('Style','Text','-and','Tag','Answer');
-set(AnswerDisplay, 'String', AnswerWord);
+AnswerInput = findobj('Style','edit','-and','Tag','AnswerInput'); % obtains 'AnswerInput' from AnsserInput box 
+AnswerWord = get(AnswerInput, 'String'); % sets 'Answerword' to equal typed answer
+AnswerDisplay = findobj('Style','Text','-and','Tag','Answer');  
+set(AnswerDisplay, 'String', AnswerWord); % displays Answer in 'AnswerDisplay' box 
