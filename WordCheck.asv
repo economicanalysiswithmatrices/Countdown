@@ -12,13 +12,13 @@ Valid = false;
 for i=1:length(Words)
     Word = Words{i,1};
     if(strcmpi(Word,Answer)) % compares word against players answer
-        Valid = true; % answer is valid if both words are identical when compared
-        break; % exits the for loop if words are identical 
+        Valid = true; % asnwer is accepted if both words are identical when compared
+        break; % stop iterations if words are identical 
     end
     
 end
-if(strcmpi(Answer,'')) % if no word is entered then message display will be invalid
-    Valid = false; 
+if(strcmpi(Answer,'')) 
+    Valid = false;
     
 end
 Boolean = Valid;
