@@ -20,7 +20,7 @@ Answer = get(AnswerObject,'String');
 
 
 if(LetterCheck(Answer) && (WordCheck(Answer)))
-    Score = CalcScore(Answer);
+    Score = CalculateScore(Answer);
     SaveScore(Score,Answer)
     Reset
 else
