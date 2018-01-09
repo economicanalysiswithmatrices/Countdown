@@ -178,4 +178,4 @@ function SubmitAnswer_Callback(hObject, eventdata, handles)
 AnswerInput = findobj('Style','edit','-and','Tag','AnswerInput'); % finds answer object with properties listed, in the GUI
 AnswerWord = get(AnswerInput, 'String'); % take the string of the Answerinput
 AnswerDisplay = findobj('Style','Text','-and','Tag','Answer'); % displays the text of the answer submitted
-set(AnswerDisplay, 'String', AnswerWord); 
+set(AnswerDisplay, 'String', AnswerWord); %
