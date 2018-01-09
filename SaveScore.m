@@ -1,8 +1,9 @@
 function SaveScore(Score,Answer)
     
-Answer = lower(Answer);
+Answer = lower(Answer); % sets variable 'Answer' to equal 'Answer' in lower case
 
-Name = inputdlg(sprintf('Your word "%s" scored %s. Please enter your name to save your score', Answer,Score));
+Name = inputdlg(sprintf('Your word "%s" scored %s. Please enter your name to save your score', Answer,Score)); 
+% sets variable 'Name' to equal phrase shown
     
     if(~isempty(Name))
         
@@ -27,11 +28,11 @@ Name = inputdlg(sprintf('Your word "%s" scored %s. Please enter your name to sav
                if(Count == 2)
                    if(Letter ~= ',')
                    HighestStored = str2num(Letter);
-                   ScoreNum = str2num(Score);
-                         if(ScoreNum > HighestStored)
-                         HighestScores = fopen('HighestScorer.txt','w');
-                         fprintf(HighestScores,'%s,%s,%s\r\n',NameString,Answer,Score);
-                         DisplayHighestScore
+                   ScoreNumber = str2num(Score);
+                         if(ScoreNumber > HighestStored)
+                         HighestScores = fopen('HighestScorer.txt','w'); % opens file 'HighestScorer.txt'
+                         fprintf(HighestScores,'%s,%s,%s\r\n',NameString,Answer,Score); % inputs name and score into 'HighestScores.txt' file
+                         DisplayHighestScore % executes funtion 'DisplayHighestScore'
                          end   
                    end
 
@@ -40,17 +41,17 @@ Name = inputdlg(sprintf('Your word "%s" scored %s. Please enter your name to sav
             
     
         else
-            HighestScores = fopen('HighestScorer.txt','w');
-            fprintf(HighestScores,'%s,%s,%s\r\n',NameString,Answer,Score);
-            DisplayHighestScore
+            HighestScores = fopen('HighestScorer.txt','w'); % opens file 'HighestScorer.txt'
+            fprintf(HighestScores,'%s,%s,%s\r\n',NameString,Answer,Score); % inputs name and score into 'HighestScores.txt' file
+            DisplayHighestScore % executes funtion 'DisplayHighestScore'
         end
 
 
 
-        File = fopen('Scores.txt','a');
+        File = fopen('Scores.txt','a'); % opens file 'Scores.txt' 
 
-        fprintf(File,'%s,%s,%s,\r\n',NameString,Answer,Score);
+        fprintf(File,'%s,%s,%s,\r\n',NameString,Answer,Score); % inputs name and score into 'Scores.txt' file
     
     else
-        msgbox('You chose not save your score')
+        msgbox('You chose not save your score') % if you do not enter name displays this phrase
     end
