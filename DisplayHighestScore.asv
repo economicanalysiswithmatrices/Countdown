@@ -6,9 +6,9 @@
 
     HighestScorer = textscan(HighestScoreFile, '%s', 'delimiter', '\n'); % searches through the file string array
 
-    if(~isempty(HighestScorer{1,1})) 
+    if(~isempty(HighestScorer{1,1})) % if the HighestScorer is not empty then the highest scorer will replace the string of text
         HighestScorer = HighestScorer{1,1}{1,1}; 
-        HighestScorer =  strrep(HighestScorer, '_', ' '); 
+        HighestScorer =  strrep(HighestScorer, '_', ' '); % replaces the substring in each array element for the HighestScorer
         set(HighestScoreDisplay, 'String',HighestScorer)
     end
     
