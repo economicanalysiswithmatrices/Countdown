@@ -107,10 +107,10 @@ if (~Started) % if started is false
             CurrentLetter = findobj('Style', 'text','-and','Tag',LetterDefine); % as above 
             set(CurrentLetter,'String',RandomConsonant) % sets box to show obtained consonant
             if(NumberOfLetters == 9) % if number of letters equals 9 countdown starts 
-              Start % for start fuction (to be implemented)
+              Start % runs start fuction 
             end
       else
-          Start
+          Start % runs start fuction 
       end
    end
 end
@@ -130,14 +130,14 @@ if(~Started) % if started is false
           NumberOfVowels = NumberOfVowels + 1; % add 1 to the number of vowels
           RandomNumber = randi(numel(Vowels)); % generates a random number from zero to number of vowels 
           RandomVowel = Vowels(1,RandomNumber); % uses random number to obtain a consonant
-          LetterDefine = strcat('Letter',int2str(NumberOfLetters));
-          CurrentLetter = findobj('Style', 'text','-and','Tag',LetterDefine);
-          set(CurrentLetter,'String',RandomVowel)
-          if(NumberOfLetters == 9)
-              Start
+          LetterDefine = strcat('Letter',int2str(NumberOfLetters)); % obtains curent letter box
+          CurrentLetter = findobj('Style', 'text','-and','Tag',LetterDefine); % as above 
+          set(CurrentLetter,'String',RandomVowel) % sets box to show obtained vowel
+          if(NumberOfLetters == 9) % if number of letters equals 9 countdown starts 
+              Start % runs start fuction 
           end
       else
-          Start
+          Start % runs start fuction 
       end
    end
 end
