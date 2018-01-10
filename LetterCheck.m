@@ -16,19 +16,19 @@ AnswerLength = length(Answer); % sets 'AnswerLength' variable to equal length of
 
 Check = 0;
 
-for j=1:AnswerLength
-    AnswerLetter = Answer(1,j);
+for j=1:AnswerLength %Runs to amount of times AnswerLength
+    AnswerLetter = Answer(1,j); %Get current AnswerLetter
     for k=1:9
-       if(strcmpi(Letters(1,k),AnswerLetter))
-           Letters(1,k) = '&';
-           Check = Check + 1;
-           break;
+       if(strcmpi(Letters(1,k),AnswerLetter)) %Checks if letter at certain location is equal to letter in given letters
+           Letters(1,k) = '&';  %Remove letter by setting it to & symbol
+           Check = Check + 1;  %Add one to Check
+           break; %break loop letter has been found
        end
     end
     
 end
 
-if(Check == AnswerLength)
+if(Check == AnswerLength) %Check should equal number of letters in answer
     Boolean = true;
 else
     Boolean = false;
