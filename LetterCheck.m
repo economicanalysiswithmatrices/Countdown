@@ -1,6 +1,6 @@
 function Boolean = LetterCheck(Answer) % funtion to check if letters used correlate with letters chosen  
 
-Letters = ''; % defines 'Letters' variable 
+Letters = ''; % defines 'Letters' variable as empty 
 
 for i=1:9 % for letters 1 to 9
    LetterNumber = strcat('Letter',int2str(i)); % sets 'LetterNumber' equal to i
@@ -10,7 +10,7 @@ for i=1:9 % for letters 1 to 9
 end
 
 
-Answer = upper(Answer);
+Answer = upper(Answer); % sets 'Answers' to upper case letters 
 
 AnswerLength = length(Answer); % sets 'AnswerLength' variable to equal length of Answer 
 
