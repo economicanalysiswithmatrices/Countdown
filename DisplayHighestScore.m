@@ -6,9 +6,9 @@
 
     HighestScorer = textscan(HighestScoreFile, '%s', 'delimiter', '\n'); % searches through the file string array
 
-    if(~isempty(HighestScorer{1,1})) 
-        HighestScorer = HighestScorer{1,1}{1,1}; 
-        HighestScorer =  strrep(HighestScorer, '_', ' '); 
+    if(~isempty(HighestScorer{1,1})) %Checks if Cell is empty if not
+        HighestScorer = HighestScorer{1,1}{1,1}; %Gets Highest scorer from Cell
+        HighestScorer =  strrep(HighestScorer, '_', ' ');  %Remove Spaces and replaces _
         set(HighestScoreDisplay, 'String',HighestScorer) % changes 'HighestScoreDisplay' to show highest score
     end
     
