@@ -1,8 +1,6 @@
 function Boolean = WordCheck(Answer)
 
-
 WordsFile = fopen('Words.txt', 'rt'); % opens the external file Words.txt 
-
 Words = textscan(WordsFile, '%s', 'delimiter', '\n'); % reads the text file of a string array
 
 Words = Words{1,1}; 
