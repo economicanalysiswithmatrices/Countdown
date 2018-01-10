@@ -1,6 +1,6 @@
 function Start
 
-global Started; % obtains global variable 'Started' 
+global Started;  
 Started = true; % sets 'Started' to eequal true 
 
 TimerObject = findobj('Style','text','-and','Tag','Timer'); % obtains 'Timer' object from GUI
