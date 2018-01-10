@@ -2,7 +2,7 @@
 Instructions on how to open and play the game:
 1.	The whole zip file should be downloaded from the master branch (all files inside the master are necessary to run) 
 2.	Open the RunMe.m file in Matlab, make sure that all the files are in your workspace
-3.	Opening this will determine which GUI to run based on your operating system (either MacOS or Windows)
+3.	Opening this will determine which GUI to run based on your operating system (Linux, MacOS or Windows)
 4.  Start by choosing either a vowel or a consonant by pressing their corrosponding buttons
 5.	Continue to choose a vowel or consonant for the other 8 letters (note: you can have a maximum of 6 consonants and 5 vowels)
 6.	As soon as all of the letters have been chosen the 30 second countdown timer on the screen will start automatically
