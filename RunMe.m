@@ -2,6 +2,6 @@ if ismac
     MacGUI
 elseif ispc
     WindowsGUI
-elseif
+else
     disp('Platform not supported')
 end 
