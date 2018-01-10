@@ -103,7 +103,7 @@ if (~Started) % if started is false
             NumberOfConsonants = NumberOfConsonants + 1; % add 1 to number of consonants 
             RandomNumber = randi(numel(Consonant)); % generates random number from zero to number of different consonants 
             RandomConsonant = Consonant(1,RandomNumber); % uses random number to obtain a consonant
-            LetterDefine = strcat('Letter',int2str(NumberOfLetters)); % obtains curent letter box
+            LetterDefine = strcat('Letter',int2str(NumberOfLetters)); % obtains current letter box
             CurrentLetter = findobj('Style', 'text','-and','Tag',LetterDefine); % as above 
             set(CurrentLetter,'String',RandomConsonant) % sets box to show obtained consonant
             if(NumberOfLetters == 9) % if number of letters equals 9 countdown starts 
@@ -175,7 +175,7 @@ function SubmitAnswer_Callback(hObject, eventdata, handles)
 % hObject    handle to SubmitAnswer (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-AnswerInput = findobj('Style','edit','-and','Tag','AnswerInput'); % obtains 'AnswerInput' from AnsserInput box
+AnswerInput = findobj('Style','edit','-and','Tag','AnswerInput'); % obtains 'AnswerInput' from AnswerInput box
 AnswerWord = get(AnswerInput, 'String'); % sets 'Answerword' to equal typed answer
 AnswerDisplay = findobj('Style','Text','-and','Tag','Answer');
 set(AnswerDisplay, 'String', AnswerWord); % displays Answer in 'AnswerDisplay' box 
