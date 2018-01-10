@@ -18,7 +18,10 @@ Name = inputdlg(sprintf('Your word "%s" scored %s. Please enter your name to sav
 
         if(~isempty(HighestScorer{1,1}))
             HighestScorer = HighestScorer{1,1}{1,1};
-            
+            %This code splits the information in the file HighestScorer into Name, Word
+            %and Score, the score is then compared and if the current
+            %players score is higher replaces the information with new
+            %information
             for i=1:length(HighestScorer)
                Letter = HighestScorer(1,i);
                if(Letter == ',')
