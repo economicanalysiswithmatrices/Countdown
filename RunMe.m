@@ -1,7 +1,7 @@
-if ismac || isunix  %If linux or MacOs
-    MacGUI %Run mac version as it works on both
-elseif ispc %If windows PC
-    WindowsGUI %Run windows GUI
+if ismac || isunix  % if linux or MacOs
+    MacGUI % run mac version as it works on both
+elseif ispc % if windows PC
+    WindowsGUI % run windows GUI
 else
     disp('Platform not supported')
 end 
