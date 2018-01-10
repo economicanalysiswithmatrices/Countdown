@@ -1,6 +1,6 @@
     function DisplayHighestScore 
         
-    HighestScoreDisplay = findobj('Style','text','-and','Tag','HighestScore'); % finds the highst score text box on the GUI
+    HighestScoreDisplay = findobj('Style','text','-and','Tag','HighestScore'); % finds the highest score text box on the GUI
     
     HighestScoreFile = fopen('HighestScorer.txt', 'rt'); % opens the HighestScorer.txt file which contaians the previous highest score
 
