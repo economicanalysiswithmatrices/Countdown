@@ -1,7 +1,7 @@
 function Start
 
 global Started;  
-Started = true; % sets 'Started' to eequal true 
+Started = true; % sets 'Started' to equal true 
 
 TimerObject = findobj('Style','text','-and','Tag','Timer'); % obtains 'Timer' object from GUI
 
