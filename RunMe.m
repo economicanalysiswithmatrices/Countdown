@@ -1,4 +1,4 @@
- function varargout = RunMe(varargin)
+function varargout = RunMe(varargin)
 %GUI MATLAB code file for GUI.fig
 %      GUI, by itself, creates a new GUI or raises the existing
 %      singleton*.
@@ -66,10 +66,10 @@ axes('units','normalized', 'position',[0 0 1 1]); % creates the 'background' axe
 
 % Load in a background image and display it using the correct colors
 
-I=imread('Countdown.jpg');
-hi = imagesc(I)
+I=imread('Countdown.jpg'); % obtains 'Countdown.jpg' image from folder
+hi = imagesc(I) % displays 'Countdown.jpg' image
 
-DisplayHighestScore
+DisplayHighestScore % executes funtion 'DisplayHighestScore'
 
 Reset % executes reset funtion
 
@@ -107,10 +107,10 @@ if (~Started) % if started is false
             CurrentLetter = findobj('Style', 'text','-and','Tag',LetterDefine); % as above 
             set(CurrentLetter,'String',RandomConsonant) % sets box to show obtained consonant
             if(NumberOfLetters == 9) % if number of letters equals 9 countdown starts 
-              Start % for start fuction (to be implemented)
+              Start % runs start function
             end
       else
-          Start
+          Start % runs start function
       end
    end
 end
@@ -130,14 +130,14 @@ if(~Started) % if started is false
           NumberOfVowels = NumberOfVowels + 1; % add 1 to the number of vowels
           RandomNumber = randi(numel(Vowels)); % generates a random number from zero to number of vowels 
           RandomVowel = Vowels(1,RandomNumber); % uses random number to obtain a consonant
-          LetterDefine = strcat('Letter',int2str(NumberOfLetters));
-          CurrentLetter = findobj('Style', 'text','-and','Tag',LetterDefine);
-          set(CurrentLetter,'String',RandomVowel)
-          if(NumberOfLetters == 9)
-              Start
+          LetterDefine = strcat('Letter',int2str(NumberOfLetters)); % obtains curent letter box (1/2)
+          CurrentLetter = findobj('Style', 'text','-and','Tag',LetterDefine); % obtains current letter box (2/2)
+          set(CurrentLetter,'String',RandomVowel) % sets box to display obtained vowel 
+          if(NumberOfLetters == 9) % if number of letters equals 9 countdown starts
+              Start % runs start fuction 
           end
       else
-          Start
+          Start % runs start fuction 
       end
    end
 end
@@ -175,7 +175,7 @@ function SubmitAnswer_Callback(hObject, eventdata, handles)
 % hObject    handle to SubmitAnswer (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-AnswerInput = findobj('Style','edit','-and','Tag','AnswerInput');
-AnswerWord = get(AnswerInput, 'String');
+AnswerInput = findobj('Style','edit','-and','Tag','AnswerInput'); % obtains 'AnswerInput' from AnsserInput box
+AnswerWord = get(AnswerInput, 'String'); % sets 'Answerword' to equal typed answer
 AnswerDisplay = findobj('Style','Text','-and','Tag','Answer');
-set(AnswerDisplay, 'String', AnswerWord);
+set(AnswerDisplay, 'String', AnswerWord); % displays Answer in 'AnswerDisplay' box 
