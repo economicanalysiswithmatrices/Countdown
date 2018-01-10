@@ -67,7 +67,7 @@ axes('units','normalized', 'position',[0 0 1 1]); % creates the 'background' axe
 % Load in a background image and display it using the correct colors
 
 I=imread('Countdown.jpg'); % obtains 'Countdown.jpg' image from folder
-hi = imagesc(I) % displays 'Countdown.jpg' image
+imshow(I) % displays 'Countdown.jpg' image
 
 DisplayHighestScore % executes function 'DisplayHighestScore'
 
