@@ -1,4 +1,4 @@
-function Boolean = LetterCheck(Answer) % funtion to check if letters used correlate with letters chosen  
+function Boolean = LetterCheck(Answer) % function to check if letters used correlate with letters chosen  
 
 Letters = ''; % defines 'Letters' variable as empty 
 
