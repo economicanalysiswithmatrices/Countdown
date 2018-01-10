@@ -11,9 +11,8 @@ Name = inputdlg(sprintf('Your word "%s" scored %s. Please enter your name to sav
 
         NameString = Name{1,1};
         
-        HighestScoreFile = fopen('HighestScorer.txt', 'rt');
-
-        HighestScorer = textscan(HighestScoreFile, '%s', 'delimiter', '\n');
+        HighestScoreFile = fopen('HighestScorer.txt', 'rt'); % opens file 'HighestScores.txt' 
+        HighestScorer = textscan(HighestScoreFile, '%s', 'delimiter', '\n'); 
         
         Count = 0;
 
