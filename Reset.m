@@ -12,12 +12,12 @@ NumberOfConsonants = 0;
 global Started; 
 Started = false; % sets started variable as false, game has not been started
 
-global Vowels % defines the vowel variable and lists Vowels with varying probabilites for each letter
+global Vowels % defines the vowel variable and lists Vowels with varying probabilities for each letter
 Vowels = ["A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","E","E","E","E","E","E","E","E","E","E",...
     "E","E","E","E","E","E","E","E","E","E","E","I","I","I","I","I","I","I","I","I","I","I","I","I","O","O",...
     "O","O","O","O","O","O","O","O","O","O","O","U","U","U","U","U"];
 
-global Consonant % defines the consonant vowel and lists Consonants with different proababilites of obtaining each letters
+global Consonant % defines the consonant vowel and lists Consonants with different probabilities of obtaining each letters
 Consonant =  ["B","B","C","C","C","D","D","D","D","D","D","F","F","G","G","G","H","H","J","K","L","L","L","L","L",...
     "M","M","M","M","N","N","N","N","N","N","N","N","P","P","P","P","P","Q","R","R","R","R","R","R","R","R","R",...
     "S","S","S","S","S","S","S","S","S","T","T","T","T","T","T","T","T","T","V","X","Z","W","Y"];
@@ -29,7 +29,7 @@ for i=1:9
    set(LetterObject,'String', '');
 end
 
-Timer = findobj('Style','text','-and','Tag','Timer'); % finds timer object in GIU
+Timer = findobj('Style','text','-and','Tag','Timer'); % finds timer object in GUI
 
 set(Timer,'String','30') % sets the timer to start at 30
 
