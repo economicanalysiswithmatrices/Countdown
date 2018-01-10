@@ -9,6 +9,6 @@
     if(~isempty(HighestScorer{1,1})) 
         HighestScorer = HighestScorer{1,1}{1,1}; 
         HighestScorer =  strrep(HighestScorer, '_', ' '); 
-        set(HighestScoreDisplay, 'String',HighestScorer)
+        set(HighestScoreDisplay, 'String',HighestScorer) % changes 'HighestScoreDisplay' to show highest score
     end
     
