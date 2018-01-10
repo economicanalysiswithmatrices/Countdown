@@ -3,25 +3,25 @@ function Start
 global Started;  
 Started = true; % sets 'Started' to equal true 
 
-TimerObject = findobj('Style','text','-and','Tag','Timer'); % obtains 'Timer' object from GUI
+TimerObject = findobj('Style','text','-and','Tag','Timer'); % obtains 'Timer' from GUI
 
-[y,Fs] = audioread('Countdown.wav'); % extracts audio file 'Countdown.wav' from 
-sound(y,Fs); % plays audio file
+[y,Fs] = audioread('Countdown.wav'); % extracts audio file 'Countdown.wav' 
+sound(y,Fs); % plays 'Countdown.wav' audio file
 
 for i=1:30 
-    set(TimerObject, 'String', 30-i) % reduces timer by 1 
+    set(TimerObject, 'String', 30-i) % set timer to countdown
     pause(1) % with 1 second pause inbetween each reduction 
 end
 
-AnswerObject = findobj('Style','text','-and','Tag','Answer');
+AnswerObject = findobj('Style','text','-and','Tag','Answer'); % obtains 'Answer' from GUI 
 Answer = get(AnswerObject,'String');
 
 if(LetterCheck(Answer) && (WordCheck(Answer))) % checks Letter and Word criteria is met 
-    Score = CalculateScore(Answer); % calculate 'Score'
-    SaveScore(Score,Answer) % executes 'SaveScore' function
-    Reset % executes 'Reset' function 
+    Score = CalculateScore(Answer); % calculates 'Score' using 'CalculateScore' function
+    SaveScore(Score,Answer) % runs 'SaveScore' function
+    Reset % runs 'Reset' function 
 else
     msgbox('Your word was invalid'); % displays message 'Your word was invalid'
-    Reset % executes 'Reset' function 
+    Reset % runs 'Reset' function 
     
 end
