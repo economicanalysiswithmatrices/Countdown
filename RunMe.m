@@ -69,9 +69,9 @@ axes('units','normalized', 'position',[0 0 1 1]); % creates the 'background' axe
 I=imread('Countdown.jpg'); % obtains 'Countdown.jpg' image from folder
 hi = imagesc(I) % displays 'Countdown.jpg' image
 
-DisplayHighestScore % executes funtion 'DisplayHighestScore'
+DisplayHighestScore % executes function 'DisplayHighestScore'
 
-Reset % executes reset funtion
+Reset % executes reset function
 
 
 % --- Outputs from this function are returned to the command line.
@@ -130,14 +130,14 @@ if(~Started) % if started is false
           NumberOfVowels = NumberOfVowels + 1; % add 1 to the number of vowels
           RandomNumber = randi(numel(Vowels)); % generates a random number from zero to number of vowels 
           RandomVowel = Vowels(1,RandomNumber); % uses random number to obtain a consonant
-          LetterDefine = strcat('Letter',int2str(NumberOfLetters)); % obtains curent letter box (1/2)
+          LetterDefine = strcat('Letter',int2str(NumberOfLetters)); % obtains current letter box (1/2)
           CurrentLetter = findobj('Style', 'text','-and','Tag',LetterDefine); % obtains current letter box (2/2)
           set(CurrentLetter,'String',RandomVowel) % sets box to display obtained vowel 
           if(NumberOfLetters == 9) % if number of letters equals 9 countdown starts
-              Start % runs start fuction 
+              Start % runs start function 
           end
       else
-          Start % runs start fuction 
+          Start % runs start function 
       end
    end
 end
