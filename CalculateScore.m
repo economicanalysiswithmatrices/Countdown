@@ -1,5 +1,5 @@
-function Score = CalculateScore(Answer) % calculates score for word 
+function Score = CalculateScore(Answer) % calculates score for the word 
 
-Score = length(Answer); % set variable 'Score' equal to length of 'Answer'
+Score = length(Answer); % sets variable 'Score' equal to length of 'Answer'
 
 Score = num2str(Score); % converts 'Score' to an integer
