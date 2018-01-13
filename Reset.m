@@ -39,4 +39,4 @@ set(AnswerInput,'String','') % sets the answer input to empty
 
 Answer = findobj('Style','text','-and','Tag','Answer'); % finds the answer object in the GUI
 
-set(Answer,'String','') % sets this to be empty also so the 
+set(Answer,'String','') % sets this to be empty also
