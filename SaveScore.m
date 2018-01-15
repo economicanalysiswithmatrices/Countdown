@@ -16,16 +16,16 @@ if(~isempty(Name))
     Count = 0;
     if(~isempty(HighestScorer{1,1}))
         HighestScorer = HighestScorer{1,1}{1,1};
-        if(~isempty(HighestScorer)) %Makes sure the HighestScorer is not 
-            %empty, if it is empty the file can be cleared and nothing has 
-            %to be compared, if not empty the currenthighest score can be 
-            %compared to this score
+        if(~isempty(HighestScorer)) % makes sure the HighestScorer is not 
+            % empty, if it is empty the file can be cleared and nothing has 
+            % to be compared, if not empty the current highest score can be 
+            % compared to this score
             
             
-            %This code splits the information in the file HighestScorer into Name, Word
-            %and Score, the score is then compared and if the current
-            %players score is higher replaces the information with new
-            %information
+            % this code splits the information in the file HighestScorer into Name, Word
+            % and Score, the score is then compared and if the current
+            % players score is higher replaces the information with new
+            % information
             for i=1:length(HighestScorer)
                 Letter = HighestScorer(1,i);
                 if(Letter == ',')
